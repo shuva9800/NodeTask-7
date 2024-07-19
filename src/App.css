@@ -1,0 +1,166 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
+
+
+/* General styling for the app */
+.app {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styling */
+header {
+  background-color: #282c34;
+  padding: 1rem;
+  color: white;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Page styling */
+h2, h3, h4, h5 {
+  margin: 1rem 0;
+}
+
+.todo-list-container, .todo-list {
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 1200px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.add-todo-list-form, .add-task-form {
+  margin-bottom: 1rem;
+}
+
+.add-todo-list-form input,
+.add-task-form input,
+.add-task-form select,
+.add-todo-list-form button,
+.add-task-form button {
+  margin: 0.5rem 0;
+}
+
+.add-todo-list-form input,
+.add-task-form input,
+.add-task-form select {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.add-todo-list-form button,
+.add-task-form button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-todo-list-form button:hover,
+.add-task-form button:hover {
+  background-color: #45a049;
+}
+
+.tasks {
+  display: flex;
+  justify-content: space-between;
+}
+
+.priority-section {
+  width: 30%;
+  background-color: black;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.priority-section h4 {
+  margin-top: 0;
+}
+
+.priority-section div {
+  background-color: black;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.priority-section div:hover {
+  background-color: blue;
+}
+
+.todo-list-container {
+  text-align: center;
+}
