@@ -38,7 +38,7 @@ const Login = ({ onLogin }) => {
         <button type="submit">Login</button>
       </form>
       <div>
-        <span>Already Have an account </span>
+        <span>Dont Have an account? </span>
         <span><Link to='/signup'>SignUp</Link></span>
       </div>
     </div>
