@@ -28,11 +28,11 @@
 // export default App;
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import Signup from './components/Signup';
 import Login from './components/Login';
 import TodoList from './components/TodoList';
 import BackOfficePanel from './components/BackOfficePanel';
 import './App.css';
+import Signup from './components/Signup';
 
 const App = () => {
   const [user, setUser] = useState(null);
