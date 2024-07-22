@@ -196,13 +196,13 @@ const BackOfficePanel = () => {
 
   const fetchTasks = async () => {
     try {
-      const querySnapshot = await getDocs(collection(db, 'todos'));
+      const querySnapshot = await getDocs(collection(db, 'lists'));
       const taskList = querySnapshot.docs.map(doc => {
-        const { name, tasks, createdAt, updatedAt, userEmail } = doc.data();
+        const { name, tasks, createdAt, updatedAt, userEmail, numberOfTasks} = doc.data();
         return {
           taskListTitle: name,
           createdBy: userEmail,
-          numberOfTasks: tasks.length,
+          numberOfTasks: numberOfTasks,
           creationTime: createdAt ? createdAt.toDate().toLocaleString() : 'N/A',
           lastUpdateTime: updatedAt ? updatedAt.toDate().toLocaleString() : 'N/A',
         };
@@ -214,18 +214,45 @@ const BackOfficePanel = () => {
     }
   };
 
+  // const fetchAllTasks = async () => {
+  //   try {
+  //     const querySnapshot = await getDocs(collection(db, 'tasks'));
+  //     const allTasks = querySnapshot.docs.reduce((tasksAcc, doc) => {
+  //       const { tasks, userEmail,dueDate,priority,description,createdAt,title } = doc.data();
+  //       return tasksAcc.concat(tasks.map(task => ({
+  //         taskTitle: title,
+  //         taskDescription: description,
+  //         dueDate:dueDate ,
+  //         createdBy: userEmail,
+  //         creationTime: createdAt ? new Date(tasks.createdAt).toLocaleString() : 'N/A',
+  //       })));
+  //     }, []);
+  //     setTasks(allTasks);
+  //     setCurrentView('tasks'); // Set the current view to 'tasks'
+  //   } catch (error) {
+  //     console.error('Error fetching all tasks:', error);
+  //   }
+  // };
+
+
+
+
+
+  
+ 
+ //new
   const fetchAllTasks = async () => {
     try {
-      const querySnapshot = await getDocs(collection(db, 'todos'));
-      const allTasks = querySnapshot.docs.reduce((tasksAcc, doc) => {
-        const { tasks, userEmail } = doc.data();
-        return tasksAcc.concat(tasks.map(task => ({
-          taskTitle: task.title,
-          taskDescription: task.description,
-          dueDate: task.dueDate,
+      const querySnapshot = await getDocs(collection(db, 'tasks'));
+      const allTasks = querySnapshot.docs.map(( doc) => {
+        const { tasks, userEmail,dueDate,priority,description,createdAt,title } = doc.data();
+        return{
+          taskTitle: title,
+          taskDescription: description,
+          dueDate:dueDate ,
           createdBy: userEmail,
-          creationTime: task.createdAt ? new Date(task.createdAt).toLocaleString() : 'N/A',
-        })));
+          creationTime: createdAt ? createdAt.toDate().toLocaleString() : 'N/A',
+        }
       }, []);
       setTasks(allTasks);
       setCurrentView('tasks'); // Set the current view to 'tasks'

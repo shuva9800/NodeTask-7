@@ -30,7 +30,8 @@ const Task = ({ task }) => {
         userId: user.uid,
         userEmail: user.email,
         listId,
-        createdAt: new Date()
+        createdAt: new Date(),
+        updatedAt: new Date()
       });
 
       // Update the task count and last updated time for the list
