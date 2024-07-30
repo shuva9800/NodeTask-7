@@ -13,7 +13,6 @@ const Signup = () => {
     e.preventDefault();
     const { user } = await createUserWithEmailAndPassword(auth, email, password);
 
-    // Fetch IP address (simulated for example)
     const ipAddress = await fetch('https://api.ipify.org?format=json').then(res => res.json()).then(data => data.ip);
 
     // Store user details in Firestore

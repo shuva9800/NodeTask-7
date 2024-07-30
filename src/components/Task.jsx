@@ -45,23 +45,14 @@ const Task = ({ task }) => {
     }
   };
 
-//   const deleteTask = async (taskId, listId) => {
-//     await deleteDoc(doc(db, "tasks", taskId));
-    
-//     // Update the task count and last updated time for the list
-//     const listDocRef = doc(db, "lists", listId);
-//     await updateDoc(listDocRef, {
-//       numberOfTasks: increment(-1),
-//       updatedAt: new Date()
-//     });
-//   };
+
 
   return (
     <div className="task">
       <h4 className="task-title">{task.title}</h4>
       <p className="task-description">{task.description}</p>
       <p className="task-due-date">Due: {task.dueDate}</p>
-      {/* <button onClick={() => deleteTask(task.id, task.listId)} className="task-delete-button">Delete Task</button> */}
+    
     </div>
   );
 };
